@@ -8,30 +8,30 @@ def two_digit(lst):
     second = digit_dict.get(lst[1])
     out_string = first +" "+ second
     return(out_string) 
-digit_dict = {0:'zero',1:'one', 2:'two', 3:'three', 4:'four', 5:'five', 6:'six', 7:'seven', 8:'eight',               9:'nine', 10:'ten',11:'eleven', 12 : 'twelve', 13:'thirteen', 14:'fourteen',                            15:'fifteen', 16:'sixteen', 17: 'seventeen',18:'eighteen', 19:'nineteen', 20:'twenty',                  30:'thirty', 40:'forty', 50:'fifty', 60:'sixty', 70:'seventy',
-              80:'eighty', 90 : 'ninety'}    
+digit_dict = {0:'zero',1:'One', 2:'Two', 3:'Three', 4:'Four', 5:'Five', 6:'Six', 7:'Seven', 8:'Eight',
+              9:'Nine', 10:'Ten',11:'Eleven', 12 : 'Twelve', 13:'Thirteen', 14:'Fourteen', 15:'Fifteen',
+              16:'Sixteen', 17: 'Seventeen',18:'Eighteen', 19:'Nineteen', 20:'Twenty',
+              30:'Thirty', 40:'Forty', 50:'Fifty', 60:'Sixty', 70:'Seventy',
+              80:'Eighty', 90 : 'Ninety'}    
 
 def main():
-    # Getting input from the key board : You can add validation later
+    
+    
+    
+    
+    # Getting input from the key board 
     while True:
       try:
         num = int(input("Please give a number below 1000 : "))
-        if (num>1000):
+      except ValueError:
+          print("Sorry, Did not under stand the input.")
+          continue
+      else:
+        if (num>=1000):
           print("Sorry ! enter a number below 1000 : ")          
           #continue
         else:
-          break  
-      except ValueError:
-        print("Sorry, Did not under stand the input.")
-        #better try again... Return to the start of the loop
-        continue
-      else:
-        break   
-    
-    
-    
-    
-    num = int(input("Please give a number below 1000 : "))
+          break 
     
     print("Given number is : ", num)
     # Definfe necessary dictionaries
@@ -47,7 +47,7 @@ def main():
         ## three digit number
         if len(lst_num)==3:
            hund_position = lst_num[0]
-           first_step = digit_dict.get(hund_position)+ ' '+ 'hundred'
+           first_step = digit_dict.get(hund_position)+ ' '+ 'Hundred'
            ## formating final output  
            if (lst_num[1:2] in keys):
               tail_step = digit_dict.get(lst_num[1:2])
